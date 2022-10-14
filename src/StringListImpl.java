@@ -48,6 +48,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public String remove(String item) {
+        if(item == null) throw new RuntimeException();
         String[] buff = null;
         String removed = null;
         int index = -1;
@@ -85,6 +86,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public boolean contains(String item) {
+        if(item == null) throw new RuntimeException();
         for (int i = 0; i < size; i++) {
             if (storage[i].equals(item)) {
                 return true;
@@ -95,6 +97,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public int indexOf(String item) {
+        if(item == null) throw new RuntimeException();
         int index = -1;
         for (int i = 0; i < size; i++) {
             if (Objects.equals(storage[i], item)) {
@@ -111,6 +114,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public int lastIndexOf(String item) {
+        if(item == null) throw new RuntimeException();
         int index = -1;
         for (int i = size - 1; i >= 0; i--) {
             if (Objects.equals(storage[i], item)) {
