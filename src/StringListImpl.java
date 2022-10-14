@@ -12,6 +12,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public String add(String item) {
+        if(item == null) throw new RuntimeException();
         if (size == storage.length) {
             storage = Arrays.copyOf(storage, size + 1);
         }
@@ -22,7 +23,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public String add(int index, String item) {
-        if(index < 0 || index >= size){
+        if(index < 0 || index >= size|| item == null){
             throw new RuntimeException();
         }
         if (size == storage.length) {
@@ -40,6 +41,7 @@ public class StringListImpl implements StringList {
 
     @Override
     public String set(int index, String item) {
+        if(item == null) throw new RuntimeException();
         storage[index] = item;
         return storage[index];
     }
