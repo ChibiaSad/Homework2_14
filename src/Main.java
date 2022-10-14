@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        StringList stringList = new StringListImpl(5);
+        StringList stringList = new StringListImpl(3);
         stringList.add("da0");
         stringList.add("da");
         stringList.add("da2");
